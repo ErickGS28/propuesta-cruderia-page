@@ -344,8 +344,8 @@
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
-  .h-6 {
-    height: calc(var(--spacing) * 6);
+  .h-4 {
+    height: calc(var(--spacing) * 4);
   }
   .h-8 {
     height: calc(var(--spacing) * 8);
