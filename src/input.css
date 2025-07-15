@@ -16,6 +16,34 @@
   --font-nunito: 'Nunito', sans-serif;
 }
 
+/* iOS Safari viewport height fix */
+:root {
+  --vh: 1vh;
+}
+
+/* Fixed height hero section for iOS compatibility */
+.hero-height {
+  height: 100vh; /* Fallback for older browsers */
+  height: calc(var(--vh, 1vh) * 100); /* iOS Safari fix */
+  min-height: 100vh; /* Additional fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-appearance: none) {
+  .hero-height {
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+}
+
+/* Prevent horizontal scrolling on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 /* Font Face Declarations */
 @font-face {
   font-family: 'DynaPuff';

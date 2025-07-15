@@ -362,9 +362,6 @@
   .h-full {
     height: 100%;
   }
-  .h-screen {
-    height: 100vh;
-  }
   .w-auto {
     width: auto;
   }
@@ -404,6 +401,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -877,6 +877,26 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
+}
+:root {
+  --vh: 1vh;
+}
+.hero-height {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+@supports (-webkit-appearance: none) {
+  .hero-height {
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+}
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 @font-face {
   font-family: 'DynaPuff';
